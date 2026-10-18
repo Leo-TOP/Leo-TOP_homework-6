@@ -53,32 +53,90 @@
         <div class="panel__header">
           <div>
             <p class="panel__eyebrow">Новая запись</p>
-            <h2 class="panel__title" id="form-title">Добавить объект</h2>
+            <h2 class="panel__title" id="form-title">Добавить исполнителя</h2>
           </div>
         </div>
 
-        <form class="entry-form" data-form="entry">
-          <div class="field">
-            <label class="field__label" for="entry-title">Название</label>
-            <input
-              class="field__control"
-              id="entry-title"
-              name="title"
-              type="text"
-              minlength="2"
-              placeholder="Замените подсказку под свою тему"
-              required
-            />
-          </div>
 
-          <p class="entry-form__hint">
-            Добавьте остальные поля своей модели. Всего должно быть не меньше четырех
-            содержательных свойств помимо id.
-          </p>
+<form class="entry-form" id="artist-form" data-form="entry">
+  <div class="field">
+    <label class="field__label" for="artist-name">Название</label>
+    <input
+      class="field__control"
+      type="text"
+      id="artist-name"
+      name="name"
+      required
+      minlength="2"
+    />
+    <p class="field__hint">Введите название исполнителя (не менее 2 символов).</p>
+  </div>
 
+  <div class="field">
+    <label class="field__label" for="artist-description">Описание</label>
+    <textarea
+      class="field__control"
+      id="artist-description"
+      name="description"
+      rows="4"
+      minlength="10"
+      required
+    ></textarea>
+    <p class="field__hint">Краткое описание исполнителя (не менее 10 символов).</p>
+  </div>
+
+  <div class="field">
+    <label class="field__label" for="artist-genres">Жанры (опционально)</label>
+    <input
+      class="field__control"
+      type="text"
+      id="artist-genres"
+      name="genres"
+    />
+    <p class="field__hint">Жанры через запятую, например: альтернативный рок, инди-рок.</p>
+  </div>
+
+  <div class="field">
+    <label class="field__label" for="artist-image-url">Ссылка на изображение (опционально)</label>
+    <input
+      class="field__control"
+      type="url"
+      id="artist-image-url"
+      name="imageUrl"
+    />
+    <p class="field__hint">Полный URL изображения, начинающийся с http:// или https://.</p>
+  </div>
+
+  <div class="field">
+    <label class="field__label" for="artist-formed-year">Год основания</label>
+    <input
+      class="field__control"
+      type="number"
+      id="artist-formed-year"
+      name="formedYear"
+      min="1900"
+      max="2026"
+      required
+    />
+    <p class="field__hint">Год от 1900 до текущего года.</p>
+  </div>
+
+  <div class="field field--checkbox">
+    <label class="field__label" for="artist-is-active">
+      <input
+        type="checkbox"
+        id="artist-is-active"
+        name="isActive"
+        checked
+      />
+      Активен
+    </label>
+    <p class="field__hint">Снимите галочку, если исполнитель неактивен.</p>
+  </div>
+        <p class="entry-form__message" data-ui="form-message" role="status" aria-live="polite"></p>
           <div class="entry-form__actions">
             <button class="button button--primary" type="submit" data-action="submit">
-              Отправить в API
+              Сохранить исполнителя
             </button>
           </div>
         </form>

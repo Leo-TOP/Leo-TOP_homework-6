@@ -1,12 +1,61 @@
 {
-  "items": [
+  "artists": [
     {
-      "id": "starter-1",
-      "title": "Замените демонстрационную запись",
-      "category": "starter",
-      "value": 0,
+      "id": "1",
+      "name": "Twenty One Pilots",
+      "description": "Американский дуэт, известный смешением альтернативного рока, инди и электроники.",
+      "genres": [
+        "альтернативный рок",
+        "инди-рок"
+      ],
+      "imageUrl": "https://avatars.yandex.net/get-music-content/16450533/d5662f3b.p.792433/m1000x1000",
+      "formedYear": 2009,
       "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Red Hot Chili Peppers",
+      "description": "Американская фанк-рок-группа из Лос-Анджелеса, сочетающая фанк, панк и психоделический рок.",
+      "genres": [
+        "фанк-рок",
+        "альтернативный рок",
+        "панк-рок"
+      ],
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=c0157f9b9342160f40ad86d6efc8ba7c_l-11476564-images-thumbs&n=13",
+      "formedYear": 1983,
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Linkin Park",
+      "description": "Американская группа в стиле ню-метал и альтернативный рок, известная смешением тяжёлых гитар с электроникой и хип-хопом.",
+      "genres": [
+        "ню-метал",
+        "альтернативный рок",
+        "рэп-рок"
+      ],
+      "imageUrl": "https://i.ytimg.com/vi/Mha_qKamcGw/maxresdefault.jpg",
+      "formedYear": 1996,
+      "isActive": true
+    },
+    {
+      "name": "кукуку",
+      "description": "кукукукукукукукукуку",
+      "imageUrl": "",
+      "formedYear": 1908,
+      "isActive": true,
+      "genres": [],
+      "id": "zbky1zcziNY"
+    },
+    {
+      "name": "4134134314",
+      "description": "41341413431",
+      "imageUrl": "",
+      "formedYear": 1900,
+      "isActive": true,
+      "genres": [],
+      "id": "b6qOngxQ7sw"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
-
