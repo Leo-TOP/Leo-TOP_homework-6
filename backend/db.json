@@ -1,30 +1,30 @@
 {
   "artists": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Twenty One Pilots",
-      "formed_year": 2009,
-      "description": "American duo known for genre-blending alt-rock.",
-      "genres": ["alternative", "indie rock"],
-      "image_url": "https://avatars.yandex.net/get-music-content/16450533/d5662f3b.p.792433/m1000x1000",
+      "description": "Американский дуэт, известный смешением альтернативного рока, инди и электроники.",
+      "genres": ["альтернативный рок", "инди-рок"],
+      "imageUrl": "https://avatars.yandex.net/get-music-content/16450533/d5662f3b.p.792433/m1000x1000",
+      "formedYear": 2009,
       "isActive": true
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Red Hot Chili Peppers",
-      "formed_year": 1983,
-      "description": "American funk-rock band formed in Los Angeles, known for blending funk, punk, and psychedelic rock.",
-      "genres": ["funk rock", "alternative rock", "punk rock"],
-      "image_url": "https://avatars.mds.yandex.net/i?id=c0157f9b9342160f40ad86d6efc8ba7c_l-11476564-images-thumbs&n=13",
+      "description": "Американская фанк-рок-группа из Лос-Анджелеса, сочетающая фанк, панк и психоделический рок.",
+      "genres": ["фанк-рок", "альтернативный рок", "панк-рок"],
+      "imageUrl": "https://avatars.mds.yandex.net/i?id=c0157f9b9342160f40ad86d6efc8ba7c_l-11476564-images-thumbs&n=13",
+      "formedYear": 1983,
       "isActive": true
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Linkin Park",
-      "formed_year": 1996,
-      "description": "American nu-metal and alt-rock band known for blending heavy guitars with electronic and hip-hop elements.",
-      "genres": ["nu metal", "alternative rock", "rap rock"],
-      "image_url": "https://i.ytimg.com/vi/Mha_qKamcGw/maxresdefault.jpg",
+      "description": "Американская группа в стиле ню-метал и альтернативный рок, известная смешением тяжёлых гитар с электроникой и хип-хопом.",
+      "genres": ["ню-метал", "альтернативный рок", "рэп-рок"],
+      "imageUrl": "https://i.ytimg.com/vi/Mha_qKamcGw/maxresdefault.jpg",
+      "formedYear": 1996,
       "isActive": true
     }
   ]
