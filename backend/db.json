@@ -1,12 +1,31 @@
 {
-  "items": [
+  "artists": [
     {
-      "id": "starter-1",
-      "title": "Замените демонстрационную запись",
-      "category": "starter",
-      "value": 0,
+      "id": "1",
+      "name": "Twenty One Pilots",
+      "formed_year": 2009,
+      "description": "American duo known for genre-blending alt-rock.",
+      "genres": ["alternative", "indie rock"],
+      "image_url": "https://avatars.yandex.net/get-music-content/16450533/d5662f3b.p.792433/m1000x1000",
+      "isActive": true
+    },
+    {
+      "id": "2",
+      "name": "Red Hot Chili Peppers",
+      "formed_year": 1983,
+      "description": "American funk-rock band formed in Los Angeles, known for blending funk, punk, and psychedelic rock.",
+      "genres": ["funk rock", "alternative rock", "punk rock"],
+      "image_url": "https://avatars.mds.yandex.net/i?id=c0157f9b9342160f40ad86d6efc8ba7c_l-11476564-images-thumbs&n=13",
+      "isActive": true
+    },
+    {
+      "id": "3",
+      "name": "Linkin Park",
+      "formed_year": 1996,
+      "description": "American nu-metal and alt-rock band known for blending heavy guitars with electronic and hip-hop elements.",
+      "genres": ["nu metal", "alternative rock", "rap rock"],
+      "image_url": "https://i.ytimg.com/vi/Mha_qKamcGw/maxresdefault.jpg",
       "isActive": true
     }
   ]
 }
-
