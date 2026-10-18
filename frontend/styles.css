@@ -136,6 +136,19 @@ button:disabled {
   outline-offset: 3px;
 }
 
+.field__hint {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.field--checkbox .field__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
 .button--primary {
   color: #ffffff;
   background: var(--color-primary);
@@ -303,8 +316,18 @@ textarea.field__control {
   justify-content: flex-end;
 }
 
-.page-footer {
-  padding: 0 24px 48px;
+.entry-form__message {
+  min-height: 1.25rem;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.entry-form__message--success {
+  color: #1a7f37;
+}
+
+.entry-form__message--error {
+  color: #b42318;
 }
 
 .page-footer__text {

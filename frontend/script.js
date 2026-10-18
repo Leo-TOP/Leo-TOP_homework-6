@@ -41,15 +41,20 @@ function renderArtists(artists) {
     const card = document.createElement("div");
     card.classList.add("card");
 
-    const image = setUpImage(artist);
+    if (artist.imageUrl) {
+      const image = setUpImage(artist);
+      card.append(image);
+    }
 
     const name = document.createElement("h3");
     name.classList.add("card__title");
     name.textContent = artist.name;
+    card.append(name);
 
     const description = document.createElement("p");
     description.classList.add("card__description");
     description.textContent = artist.description;
+    card.append(description);
 
     const meta = document.createElement("div");
     meta.classList.add("card__meta");
@@ -63,11 +68,13 @@ function renderArtists(artists) {
     active.textContent = `Статус: ${artist.isActive ? "Активен" : "Неактивен"}`;
 
     meta.append(year, active);
+    card.append(meta);
 
+    if (artist.genres?.length) {
+      const genres = setUpGenres(artist);
+      card.append(genres);
+    }
 
-    const genres = setUpGenres(artist);
-
-    card.append(image, name, description, meta, genres);
     dataUiCollection.append(card);
   });
 }
@@ -108,6 +115,75 @@ function showState(state, title, text) {
     dataUiStatus.classList.add(`status--${state}`);
   }
 }
+
+
+
+const artistForm = document.querySelector('[data-form="entry"]');
+
+const formMessage = document.querySelector('[data-ui="form-message"]');
+const submitButton = artistForm.querySelector('button[type="submit"]');
+
+function showFormMessage(text, variant) {
+  formMessage.textContent = text;
+  formMessage.classList.remove("entry-form__message--success", "entry-form__message--error");
+  if (variant) {
+    formMessage.classList.add(`entry-form__message--${variant}`);
+  }
+}
+
+artistForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(artistForm);
+  const artist = {
+    name: formData.get("name").trim(),
+    description: formData.get("description").trim(),
+    imageUrl: formData.get("imageUrl").trim(),
+    formedYear: Number(formData.get("formedYear")),
+    isActive: formData.has("isActive"),
+    genres: formData
+      .get("genres")
+      .split(",")
+      .map((genre) => genre.trim())
+      .filter(Boolean),
+  };
+
+  submitButton.disabled = true;
+  showFormMessage("", "success");
+
+  try {
+    await createArtist(artist);
+    artistForm.reset();
+    showFormMessage("Исполнитель добавлен.", "success");
+    await loadArtists(API_URL);
+  } catch (error) {
+    console.error(error);
+    showFormMessage(
+      "Не удалось добавить исполнителя. Введённые данные сохранены в форме — попробуйте ещё раз.",
+      "error"
+    );
+  } finally {
+    submitButton.disabled = false;
+  }
+});
+
+
+async function createArtist(artist) {
+  const response = await fetch(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(artist),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Failed to post artist: ${response.status}`);
+  }
+
+  return response.json();
+}
+
 
 dataUiReload.addEventListener("click", () => loadArtists(API_URL));
 loadArtists(API_URL);
